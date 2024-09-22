@@ -1,0 +1,141 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    min-height: 100vh;
+    background-color: #f2f2f2;
+}
+
+/* Sidebar styling */
+.sidebar {
+    width: 250px;
+    background-color: #f8f9fa;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    position: fixed;
+    height: 100%;
+}
+
+.logo h2 {
+    color: #ed1c24;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 24px;
+    margin-bottom: 40px;
+}
+
+.sidebar ul {
+    list-style: none;
+    width: 100%;
+}
+
+.sidebar ul li {
+    margin: 20px 0;
+    width: 100%;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    font-size: 18px;
+    color: #333;
+    display: block;
+    padding: 10px 0;
+    text-align: center;
+    transition: color 0.3s;
+    border-radius: 5px;
+}
+
+.sidebar ul li a:hover,
+.sidebar ul li a.active {
+    background-color: #ed1c24;
+    color: #fff;
+}
+.buttons{
+    margin-top: 120px;
+}
+
+.social-icons {
+    margin-left: 30px;
+    margin-top: -10px;
+
+}
+
+.social-icons a {
+    color:black; 
+    margin-right: 10px; 
+    font-size: 24px;
+}
+
+.social-icons a:hover {
+    color: #2c3e50;
+}
+.main-content {
+    margin-left: 270px;
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    position: relative;
+    left: 120px;
+}
+
+.text-section {
+    max-width: 600px;
+    margin-right: 50px;
+}
+
+.text-section h1 {
+    font-size: 42px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.name-highlight {
+    color: #ed1c24;
+}
+
+.job-highlight {
+    color: #ed1c24;
+}
+
+.text-section p {
+    margin: 20px 0;
+    font-size: 18px;
+    line-height: 1.6;
+    color: #555;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #ed1c24;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #d1131b;
+}
+
+/* Profile picture styling */
+.profile-pic {
+    width: 280px;
+    height: 400px;
+    border-radius: 10px;
+    object-fit: cover;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-left: 40px;
+}
