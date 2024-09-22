@@ -12,8 +12,8 @@
         <div class="logo">
             <h2>Devang</h2>
             <div class="social-icons">
-                <a href="https://www.linkedin.com/in/devang-kumar-78ab722b3/" target="_blank"><i class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/devang-kumar" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/devang-kumar-78ab722b3/"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/devang-kumar"><i class="fab fa-github"></i></a>
             </div>
         </div>
         <ul class="buttons">
@@ -25,6 +25,7 @@
     </div>
     <div class="main-content">
         <div class="text-section">
+            <h2><div class="dis"></div></h2>
             <h1 class="te">Hello, my name is <span class="name-highlight">Devang Kumar</span></h1>
             <h2>I'm currently studying <span class="job-highlight">BE-CSE</span> at Chitkara University</h2>
             <p>I'm interested in Python and web development. I have a passion for creating and designing websites, cosmos, and exploring new technologies...</p>
@@ -35,5 +36,23 @@
             <img src="profile pic.jpg" alt="Profile Picture" class="profile-pic">
         </div>
     </div>
+    <script>
+        let doc1 = document.getElementsByClassName("dis")[0];
+        let d = document.querySelector("html");
+        const name = "welcome to my portfolio website";
+    
+        function displayMessage() {
+        doc1.textContent = ""; 
+    
+        for (let i = 0; i < name.length; i++) {
+            setTimeout(function () {
+              doc1.textContent += name[i]; 
+            }, i * 70);
+        }
+        d.removeEventListener("mouseenter", displayMessage);
+    }
+    
+        d.addEventListener("mouseenter", displayMessage);
+    </script>
 </body>
 </html>
