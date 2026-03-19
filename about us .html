@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | Devang</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="config.js"></script>
+</head>
+<body>
+
+<canvas id="bg-canvas"></canvas>
+
+<div class="nav-overlay" id="nav-overlay"></div>
+<button class="hamburger" id="hamburger" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+</button>
+
+<nav class="sidebar" id="sidebar">
+    <div class="logo">
+        <div class="logo-name">Devang</div>
+        <div class="logo-sub">Portfolio</div>
+        <div class="logo-line"></div>
+        <div class="social-icons">
+            <a href="https://www.linkedin.com/in/devang-kumar-78ab722b3/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://github.com/devang-kumar" target="_blank"><i class="fab fa-github"></i></a>
+        </div>
+    </div>
+    <ul class="nav-links">
+        <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+        <li><a href="about us .html" class="active"><i class="fas fa-user"></i> About</a></li>
+        <li><a href="skills.html"><i class="fas fa-layer-group"></i> Skills</a></li>
+        <li><a href="projects.html"><i class="fas fa-code"></i> Projects</a></li>
+        <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+    </ul>
+</nav>
+
+<main class="main-content" style="justify-content:flex-start;padding-top:50px">
+    <section class="about-section">
+        <h2 class="section-title">About <span class="title-accent">Me</span></h2>
+        <div class="title-line"></div>
+
+        <!-- Top: profile card + bio -->
+        <div class="ab-top">
+
+            <!-- Left: profile card -->
+            <div class="ab-card">
+                <div class="ab-avatar">
+                    <img src="profile pic.jpg" alt="Devang Kumar">
+                    <div class="ab-avatar-ring"></div>
+                </div>
+                <div class="ab-card-name">Devang Kumar</div>
+                <div class="ab-card-role">BE-CSE · Chitkara University</div>
+                <div class="ab-card-divider"></div>
+                <div class="ab-meta-list">
+                    <div class="ab-meta"><i class="fas fa-birthday-cake"></i><span>12 Nov 2005</span></div>
+                    <div class="ab-meta"><i class="fas fa-user-clock"></i><span id="auto-age">—</span> years old</div>
+                    <div class="ab-meta"><i class="fas fa-map-marker-alt"></i><span>New Delhi, India</span></div>
+                    <div class="ab-meta"><i class="fas fa-envelope"></i><span style="font-size:11px">devangkumar12112005@gmail.com</span></div>
+                </div>
+                <div class="ab-card-divider"></div>
+                <div class="ab-socials">
+                    <a href="https://www.linkedin.com/in/devang-kumar-78ab722b3/" target="_blank" class="ab-social-btn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://github.com/devang-kumar" target="_blank" class="ab-social-btn"><i class="fab fa-github"></i></a>
+                    <a href="https://www.freelancer.in/u/devangkumar12112" target="_blank" class="ab-social-btn"><i class="fas fa-briefcase"></i></a>
+                </div>
+                <a href="Resumeupdated.pdf" class="btn btn-primary" style="width:100%;justify-content:center;margin-top:20px;font-size:13px">
+                    <i class="fas fa-download"></i> Download CV
+                </a>
+            </div>
+
+            <!-- Right: bio + stats + experience -->
+            <div class="ab-right">
+
+                <!-- Bio -->
+                <div class="ab-bio">
+                    <p>I'm a B.E. Computer Science Engineering student at Chitkara University with a deep passion for coding and technology. I specialize in Python — building image processing pipelines, working with industry-grade LLMs, and shipping freelance solutions for real clients worldwide.</p>
+                    <p style="margin-top:14px">I thrive on solving complex problems and stay on the cutting edge of AI and web development. Always learning, always building.</p>
+                </div>
+
+                <!-- Stats row -->
+                <div class="ab-stats">
+                    <div class="ab-stat">
+                        <div class="ab-stat-num" id="repo-count-about">10+</div>
+                        <div class="ab-stat-label">GitHub Repos</div>
+                    </div>
+                    <div class="ab-stat">
+                        <div class="ab-stat-num">15+</div>
+                        <div class="ab-stat-label">Skills</div>
+                    </div>
+                    <div class="ab-stat">
+                        <div class="ab-stat-num" id="freelance-yrs">—</div>
+                        <div class="ab-stat-label">Freelancing</div>
+                    </div>
+                    <div class="ab-stat">
+                        <div class="ab-stat-num">2+</div>
+                        <div class="ab-stat-label">Years Coding</div>
+                    </div>
+                </div>
+
+                <!-- Experience -->
+                <div class="ab-section-label">Experience</div>
+                <div class="exp-card">
+                    <div class="exp-icon"><i class="fas fa-briefcase"></i></div>
+                    <div class="exp-body">
+                        <div class="exp-title">
+                            Freelance Developer
+                            <a href="https://www.freelancer.in/u/devangkumar12112" target="_blank" class="exp-link"><i class="fas fa-external-link-alt"></i> Freelancer.com</a>
+                        </div>
+                        <div class="exp-sub">Self-employed &nbsp;·&nbsp; <span id="freelance-duration">—</span></div>
+                        <ul class="exp-list">
+                            <li>Built Python scripts for image processing and automation</li>
+                            <li>Worked with industry-grade LLMs for client AI solutions</li>
+                            <li>Delivered web development projects for international clients</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Skills teaser -->
+                <div class="ab-section-label" style="margin-top:28px">Top Skills</div>
+                <div class="ab-tags">
+                    <span class="ab-tag"><i class="fab fa-python" style="color:#3572A5"></i>Python</span>
+                    <span class="ab-tag"><i class="fas fa-code" style="color:#f34b7d"></i>C / C++</span>
+                    <span class="ab-tag"><i class="fab fa-java" style="color:#b07219"></i>Java</span>
+                    <span class="ab-tag"><i class="fab fa-js" style="color:#f7df1e"></i>JavaScript</span>
+                    <span class="ab-tag"><i class="fas fa-leaf" style="color:#44b78b"></i>Django</span>
+                    <span class="ab-tag"><i class="fab fa-node-js" style="color:#68a063"></i>Node.js</span>
+                    <span class="ab-tag"><i class="fas fa-database" style="color:#336791"></i>SQL</span>
+                    <span class="ab-tag"><i class="fas fa-brain" style="color:#a78bfa"></i>ML / AI</span>
+                    <span class="ab-tag"><i class="fas fa-robot" style="color:#00f5ff"></i>LLMs</span>
+                    <span class="ab-tag"><i class="fab fa-git-alt" style="color:#f05032"></i>Git</span>
+                </div>
+                <a href="skills.html" class="btn btn-secondary" style="margin-top:16px;font-size:13px;align-self:flex-start">
+                    <i class="fas fa-layer-group"></i> View All Skills
+                </a>
+
+            </div>
+        </div>
+    </section>
+</main>
+
+<style>
+/* ── Layout ── */
+.ab-top {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: 32px;
+    align-items: start;
+}
+
+/* ── Profile Card ── */
+.ab-card {
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: 16px;
+    padding: 28px 22px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: sticky;
+    top: 30px;
+}
+
+.ab-avatar {
+    position: relative;
+    width: 110px; height: 110px;
+    margin-bottom: 16px;
+}
+
+.ab-avatar img {
+    width: 100%; height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--card-border);
+    position: relative;
+    z-index: 1;
+}
+
+.ab-avatar-ring {
+    position: absolute;
+    inset: -5px;
+    border-radius: 50%;
+    border: 1px solid var(--neon);
+    opacity: 0.4;
+    animation: borderGlow 3s ease-in-out infinite;
+}
+
+.ab-card-name {
+    font-family: 'Orbitron', monospace;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--text);
+    letter-spacing: 1px;
+}
+
+.ab-card-role {
+    font-size: 11px;
+    color: var(--muted);
+    margin-top: 5px;
+    letter-spacing: 0.5px;
+}
+
+.ab-card-divider {
+    width: 100%;
+    height: 1px;
+    background: var(--card-border);
+    margin: 18px 0;
+}
+
+.ab-meta-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    text-align: left;
+}
+
+.ab-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 12px;
+    color: var(--muted);
+}
+
+.ab-meta i {
+    width: 16px;
+    color: var(--neon);
+    font-size: 12px;
+    flex-shrink: 0;
+}
+
+.ab-meta span { color: var(--text); }
+
+.ab-socials {
+    display: flex;
+    gap: 10px;
+}
+
+.ab-social-btn {
+    width: 36px; height: 36px;
+    border-radius: 8px;
+    border: 1px solid var(--card-border);
+    background: rgba(0,245,255,0.04);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--muted);
+    font-size: 14px;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.ab-social-btn:hover {
+    color: var(--neon);
+    border-color: var(--neon);
+    box-shadow: 0 0 12px rgba(0,245,255,0.2);
+    transform: translateY(-2px);
+}
+
+/* ── Right column ── */
+.ab-right {
+    display: flex;
+    flex-direction: column;
+}
+
+.ab-bio {
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    padding: 22px 24px;
+    margin-bottom: 20px;
+    border-left: 2px solid var(--neon);
+}
+
+.ab-bio p {
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.85;
+}
+
+/* Stats */
+.ab-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.ab-stat {
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    padding: 16px 10px;
+    text-align: center;
+    transition: var(--transition);
+}
+
+.ab-stat:hover {
+    border-color: rgba(0,245,255,0.3);
+    box-shadow: 0 0 16px rgba(0,245,255,0.08);
+}
+
+.ab-stat-num {
+    font-family: 'Orbitron', monospace;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--neon);
+    text-shadow: 0 0 12px rgba(0,245,255,0.4);
+}
+
+.ab-stat-label {
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-top: 5px;
+}
+
+/* Section label */
+.ab-section-label {
+    font-family: 'Orbitron', monospace;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--neon);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.ab-section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--card-border);
+}
+
+/* Experience */
+.exp-card {
+    display: flex;
+    gap: 16px;
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    padding: 20px;
+    transition: var(--transition);
+}
+
+.exp-card:hover {
+    border-color: rgba(0,245,255,0.25);
+    box-shadow: 0 0 20px rgba(0,245,255,0.06);
+}
+
+.exp-icon {
+    width: 40px; height: 40px; flex-shrink: 0;
+    border-radius: 10px;
+    background: rgba(0,245,255,0.08);
+    border: 1px solid var(--card-border);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--neon); font-size: 15px;
+}
+
+.exp-body { display: flex; flex-direction: column; gap: 4px; flex: 1; }
+
+.exp-title {
+    font-size: 14px; font-weight: 600; color: var(--text);
+    display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+}
+
+.exp-link {
+    font-size: 11px; color: var(--neon); text-decoration: none;
+    opacity: 0.75; transition: opacity 0.2s;
+}
+.exp-link:hover { opacity: 1; }
+
+.exp-sub { font-size: 12px; color: var(--muted); }
+
+.exp-list {
+    margin-top: 10px; padding-left: 16px;
+    display: flex; flex-direction: column; gap: 5px;
+}
+
+.exp-list li { font-size: 13px; color: var(--muted); line-height: 1.6; }
+
+/* Tags */
+.ab-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.ab-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    padding: 6px 14px;
+    background: rgba(0,245,255,0.05);
+    border: 1px solid rgba(0,245,255,0.15);
+    border-radius: 20px;
+    color: var(--text);
+    transition: var(--transition);
+    cursor: default;
+}
+
+.ab-tag:hover {
+    background: rgba(0,245,255,0.1);
+    border-color: rgba(0,245,255,0.35);
+    color: var(--neon);
+    transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .ab-top { grid-template-columns: 1fr; }
+    .ab-card { position: static; flex-direction: row; flex-wrap: wrap; text-align: left; gap: 16px; }
+    .ab-avatar { margin-bottom: 0; }
+    .ab-stats { grid-template-columns: repeat(2, 1fr); }
+}
+</style>
+
+<script>
+const canvas = document.getElementById('bg-canvas');
+const ctx = canvas.getContext('2d');
+let particles = [];
+function resize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+resize(); window.addEventListener('resize', resize);
+class Particle { constructor() { this.reset(); } reset() { this.x=Math.random()*canvas.width; this.y=Math.random()*canvas.height; this.size=Math.random()*1.5+0.3; this.speedX=(Math.random()-0.5)*0.4; this.speedY=(Math.random()-0.5)*0.4; this.opacity=Math.random()*0.5+0.1; this.color=Math.random()>0.7?'#7c3aed':'#00f5ff'; } update() { this.x+=this.speedX; this.y+=this.speedY; if(this.x<0||this.x>canvas.width||this.y<0||this.y>canvas.height)this.reset(); } draw() { ctx.save(); ctx.globalAlpha=this.opacity; ctx.fillStyle=this.color; ctx.shadowBlur=6; ctx.shadowColor=this.color; ctx.beginPath(); ctx.arc(this.x,this.y,this.size,0,Math.PI*2); ctx.fill(); ctx.restore(); } }
+for(let i=0;i<120;i++)particles.push(new Particle());
+function drawGrid(){ctx.strokeStyle='rgba(0,245,255,0.03)';ctx.lineWidth=1;const s=60;for(let x=0;x<canvas.width;x+=s){ctx.beginPath();ctx.moveTo(x,0);ctx.lineTo(x,canvas.height);ctx.stroke();}for(let y=0;y<canvas.height;y+=s){ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(canvas.width,y);ctx.stroke();}}
+function animate(){ctx.clearRect(0,0,canvas.width,canvas.height);drawGrid();particles.forEach(p=>{p.update();p.draw();});for(let i=0;i<particles.length;i++){for(let j=i+1;j<particles.length;j++){const dx=particles[i].x-particles[j].x,dy=particles[i].y-particles[j].y,d=Math.sqrt(dx*dx+dy*dy);if(d<100){ctx.save();ctx.globalAlpha=(1-d/100)*0.08;ctx.strokeStyle='#00f5ff';ctx.lineWidth=0.5;ctx.beginPath();ctx.moveTo(particles[i].x,particles[i].y);ctx.lineTo(particles[j].x,particles[j].y);ctx.stroke();ctx.restore();}}}requestAnimationFrame(animate);}
+animate();
+
+// Auto-calculate age from DOB
+const dob = new Date('2005-11-12');
+const now = new Date();
+let age = now.getFullYear() - dob.getFullYear();
+if (now < new Date(now.getFullYear(), dob.getMonth(), dob.getDate())) age--;
+document.getElementById('auto-age').textContent = age;
+
+// Freelance duration
+const freelanceStart = new Date('2024-01-01');
+const months = (now.getFullYear() - freelanceStart.getFullYear()) * 12 + (now.getMonth() - freelanceStart.getMonth());
+const yrs = Math.floor(months / 12);
+const mos = months % 12;
+const durStr = (yrs > 0 ? yrs + ' yr' + (yrs > 1 ? 's' : '') + ' ' : '') + (mos > 0 ? mos + ' mo' : '');
+const durDisplay = durStr.trim() || 'Just started';
+document.getElementById('freelance-duration').textContent = durDisplay + ' · Freelancing';
+document.getElementById('freelance-yrs').textContent = durDisplay;
+
+// Token loaded from config.js (keep config.js out of git)
+const GH_TOKEN = (typeof GH_CONFIG !== 'undefined') ? GH_CONFIG.token : '';
+
+const _ghHeaders = { 'Accept': 'application/vnd.github+json' };
+if (GH_TOKEN) _ghHeaders['Authorization'] = `Bearer ${GH_TOKEN}`;
+
+const _userUrl = 'https://api.github.com/users/devang-kumar';
+const _cached = ghCacheGet(_userUrl);
+if (_cached) {
+    document.getElementById('repo-count-about').textContent = _cached.public_repos || '—';
+} else {
+    fetch(_userUrl, { headers: _ghHeaders })
+        .then(r => { if (r.status === 403) throw new Error('rate_limit'); return r.json(); })
+        .then(d => { ghCache(_userUrl, d); document.getElementById('repo-count-about').textContent = d.public_repos || '—'; })
+        .catch(() => { document.getElementById('repo-count-about').textContent = '—'; });
+}
+</script>
+<script src="nav.js"></script>
+</body>
+</html>

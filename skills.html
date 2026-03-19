@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills | Devang</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+<canvas id="bg-canvas"></canvas>
+
+<div class="nav-overlay" id="nav-overlay"></div>
+<button class="hamburger" id="hamburger" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+</button>
+
+<nav class="sidebar" id="sidebar">
+    <div class="logo">
+        <div class="logo-name">Devang</div>
+        <div class="logo-sub">Portfolio</div>
+        <div class="logo-line"></div>
+        <div class="social-icons">
+            <a href="https://www.linkedin.com/in/devang-kumar-78ab722b3/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://github.com/devang-kumar" target="_blank"><i class="fab fa-github"></i></a>
+        </div>
+    </div>
+    <ul class="nav-links">
+        <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+        <li><a href="about us .html"><i class="fas fa-user"></i> About</a></li>
+        <li><a href="skills.html" class="active"><i class="fas fa-layer-group"></i> Skills</a></li>
+        <li><a href="projects.html"><i class="fas fa-code"></i> Projects</a></li>
+        <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+    </ul>
+</nav>
+
+<main class="main-content" style="justify-content:flex-start;padding-top:50px">
+    <section>
+        <h2 class="section-title">Skills & <span class="title-accent">Languages</span></h2>
+        <div class="title-line"></div>
+
+        <!-- Languages -->
+        <div class="skills-section-block">
+            <div class="skills-block-header">
+                <div class="skills-block-icon"><i class="fas fa-terminal"></i></div>
+                <div>
+                    <div class="skills-block-title">Programming Languages</div>
+                    <div class="skills-block-sub">Languages I write code in</div>
+                </div>
+            </div>
+            <div class="skill-grid">
+                <div class="skill-card">
+                    <i class="fas fa-code" style="color:#a8b2c1"></i>
+                    <span class="sk-name">C</span>
+                    <span class="sk-cat">Language</span>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-code" style="color:#f34b7d"></i>
+                    <span class="sk-name">C++</span>
+                    <span class="sk-cat">Language</span>
+                </div>
+                <div class="skill-card">
+                    <i class="fab fa-java" style="color:#b07219"></i>
+                    <span class="sk-name">Java</span>
+                    <span class="sk-cat">Language</span>
+                </div>
+                <div class="skill-card">
+                    <i class="fab fa-python" style="color:#3572A5"></i>
+                    <span class="sk-name">Python</span>
+                    <span class="sk-cat">Language</span>
+                </div>
+                <div class="skill-card">
+                    <i class="fab fa-js" style="color:#f7df1e"></i>
+                    <span class="sk-name">JavaScript</span>
+                    <span class="sk-cat">Language</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Web -->
+        <div class="skills-section-block">
+            <div class="skills-block-header">
+                <div class="skills-block-icon"><i class="fas fa-globe"></i></div>
+                <div>
+                    <div class="skills-block-title">Web Technologies</div>
+                    <div class="skills-block-sub">Frontend & backend stack</div>
+                </div>
+            </div>
+            <div class="skill-grid">
+                <div class="skill-card">
+                    <i class="fab fa-html5" style="color:#e34c26"></i>
+                    <span class="sk-name">HTML5</span>
+                    <span class="sk-cat">Markup</span>
+                </div>
+                <div class="skill-card">
+                    <i class="fab fa-css3-alt" style="color:#264de4"></i>
+                    <span class="sk-name">CSS3</span>
+                    <span class="sk-cat">Styling</span>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-leaf" style="color:#44b78b"></i>
+                    <span class="sk-name">Django</span>
+                    <span class="sk-cat">Framework</span>
+                </div>
+                <div class="skill-card">
+                    <i class="fab fa-node-js" style="color:#68a063"></i>
+                    <span class="sk-name">Node.js</span>
+                    <span class="sk-cat">Runtime</span>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-server" style="color:#aaa"></i>
+                    <span class="sk-name">Express</span>
+                    <span class="sk-cat">Framework</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Databases -->
+        <div class="skills-section-block">
+            <div class="skills-block-header">
+                <div class="skills-block-icon"><i class="fas fa-database"></i></div>
+                <div>
+                    <div class="skills-block-title">Databases</div>
+                    <div class="skills-block-sub">Data storage & querying</div>
+                </div>
+            </div>
+            <div class="skill-grid">
+                <div class="skill-card">
+                    <i class="fas fa-database" style="color:#336791"></i>
+                    <span class="sk-name">SQL</span>
+                    <span class="sk-cat">Relational</span>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-leaf" style="color:#4db33d"></i>
+                    <span class="sk-name">MongoDB</span>
+                    <span class="sk-cat">NoSQL</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- AI / ML -->
+        <div class="skills-section-block">
+            <div class="skills-block-header">
+                <div class="skills-block-icon" style="color:var(--neon2)"><i class="fas fa-brain"></i></div>
+                <div>
+                    <div class="skills-block-title">AI & Machine Learning</div>
+                    <div class="skills-block-sub">Intelligent systems & models</div>
+                </div>
+            </div>
+            <div class="skill-grid">
+                <div class="skill-card">
+                    <i class="fas fa-brain" style="color:#a78bfa"></i>
+                    <span class="sk-name">Machine Learning</span>
+                    <span class="sk-cat">AI / ML</span>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-robot" style="color:#00f5ff"></i>
+                    <span class="sk-name">LLMs & AI</span>
+                    <span class="sk-cat">Industry Grade</span>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-image" style="color:#f59e0b"></i>
+                    <span class="sk-name">Image Processing</span>
+                    <span class="sk-cat">Python / CV</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tools -->
+        <div class="skills-section-block">
+            <div class="skills-block-header">
+                <div class="skills-block-icon" style="color:#f05032"><i class="fab fa-git-alt"></i></div>
+                <div>
+                    <div class="skills-block-title">Tools & Platforms</div>
+                    <div class="skills-block-sub">Dev workflow & version control</div>
+                </div>
+            </div>
+            <div class="skill-grid">
+                <div class="skill-card">
+                    <i class="fab fa-git-alt" style="color:#f05032"></i>
+                    <span class="sk-name">Git</span>
+                    <span class="sk-cat">Version Control</span>
+                </div>
+                <div class="skill-card">
+                    <i class="fab fa-github" style="color:#e2e8f0"></i>
+                    <span class="sk-name">GitHub</span>
+                    <span class="sk-cat">Platform</span>
+                </div>
+            </div>
+        </div>
+
+    </section>
+</main>
+
+<style>
+.skills-section-block {
+    margin-bottom: 44px;
+}
+
+.skills-block-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 18px;
+}
+
+.skills-block-icon {
+    width: 42px; height: 42px;
+    border-radius: 10px;
+    background: rgba(0,245,255,0.07);
+    border: 1px solid var(--card-border);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 17px;
+    color: var(--neon);
+    flex-shrink: 0;
+}
+
+.skills-block-title {
+    font-family: 'Orbitron', monospace;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text);
+}
+
+.skills-block-sub {
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 3px;
+    letter-spacing: 0.3px;
+}
+
+.skill-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 14px;
+}
+
+.skill-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    padding: 22px 10px 16px;
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius);
+    text-align: center;
+    cursor: default;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.skill-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--neon), transparent);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.skill-card:hover::after { opacity: 1; }
+
+.skill-card:hover {
+    border-color: rgba(0,245,255,0.3);
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.35), 0 0 20px rgba(0,245,255,0.08);
+    background: rgba(0,245,255,0.04);
+}
+
+.skill-card i {
+    font-size: 30px;
+    filter: drop-shadow(0 0 8px currentColor);
+    transition: transform 0.3s;
+}
+
+.skill-card:hover i { transform: scale(1.2); }
+
+.sk-name {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text);
+    letter-spacing: 0.3px;
+    line-height: 1.3;
+}
+
+.sk-cat {
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+</style>
+
+<script>
+const canvas = document.getElementById('bg-canvas');
+const ctx = canvas.getContext('2d');
+let particles = [];
+function resize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+resize(); window.addEventListener('resize', resize);
+class Particle { constructor() { this.reset(); } reset() { this.x=Math.random()*canvas.width; this.y=Math.random()*canvas.height; this.size=Math.random()*1.5+0.3; this.speedX=(Math.random()-0.5)*0.4; this.speedY=(Math.random()-0.5)*0.4; this.opacity=Math.random()*0.5+0.1; this.color=Math.random()>0.7?'#7c3aed':'#00f5ff'; } update() { this.x+=this.speedX; this.y+=this.speedY; if(this.x<0||this.x>canvas.width||this.y<0||this.y>canvas.height)this.reset(); } draw() { ctx.save(); ctx.globalAlpha=this.opacity; ctx.fillStyle=this.color; ctx.shadowBlur=6; ctx.shadowColor=this.color; ctx.beginPath(); ctx.arc(this.x,this.y,this.size,0,Math.PI*2); ctx.fill(); ctx.restore(); } }
+for(let i=0;i<120;i++)particles.push(new Particle());
+function drawGrid(){ctx.strokeStyle='rgba(0,245,255,0.03)';ctx.lineWidth=1;const s=60;for(let x=0;x<canvas.width;x+=s){ctx.beginPath();ctx.moveTo(x,0);ctx.lineTo(x,canvas.height);ctx.stroke();}for(let y=0;y<canvas.height;y+=s){ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(canvas.width,y);ctx.stroke();}}
+function animate(){ctx.clearRect(0,0,canvas.width,canvas.height);drawGrid();particles.forEach(p=>{p.update();p.draw();});for(let i=0;i<particles.length;i++){for(let j=i+1;j<particles.length;j++){const dx=particles[i].x-particles[j].x,dy=particles[i].y-particles[j].y,d=Math.sqrt(dx*dx+dy*dy);if(d<100){ctx.save();ctx.globalAlpha=(1-d/100)*0.08;ctx.strokeStyle='#00f5ff';ctx.lineWidth=0.5;ctx.beginPath();ctx.moveTo(particles[i].x,particles[i].y);ctx.lineTo(particles[j].x,particles[j].y);ctx.stroke();ctx.restore();}}}requestAnimationFrame(animate);}
+animate();
+</script>
+<script src="nav.js"></script>
+</body>
+</html>

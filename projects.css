@@ -1,0 +1,158 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #f4f4f4;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #f8f8f8;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo {
+    margin-bottom: 50px;
+}
+
+.logo h2 {
+    color: #ed1c24;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 24px;
+    margin-bottom: 40px;
+}
+
+.sidebar ul {
+    list-style: none;
+    width: 100%;
+}
+
+.sidebar ul li {
+    margin: 20px 0;
+    width: 100%;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    font-size: 18px;
+    color: #333;
+    display: block;
+    padding: 10px 0;
+    text-align: center;
+    transition: color 0.3s;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.sidebar ul li a:hover,
+.sidebar ul li a.active {
+    background-color: #ed1c24;
+    color: #fff;
+}
+.active{
+    background-color: #ed1c24;
+    color: white;
+    border-radius: 5px;
+}
+.buttons{
+    margin-top: 120px;
+}
+
+.social-icons {
+    margin-left: 30px;
+    margin-top: -10px;
+
+}
+
+.social-icons a {
+    color:black; 
+    margin-right: 10px; 
+    font-size: 24px;
+}
+
+.social-icons a:hover {
+    color: #2c3e50;
+}
+/* Services Section */
+.services-section {
+    padding: 40px 0;
+    text-align: center;
+    background-color: #f4f4f9;
+}
+
+.section-title {
+    font-size: 36px;
+    color: #333;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;
+    margin: 20px;
+}
+
+.section-title::before {
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 4px;
+    background-color: #ed1c24;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
+
+.service-card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 250px;
+    width: 400px;
+    align-content: center;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.service-title {
+    font-size: 22px;
+    color: #333;
+    margin-bottom: 20px;
+
+}
+
+.service-description {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.6;
+}
+.proj{
+    margin-top:20px;
+    padding: 10px;
+    border-radius: 5px;
+    color: white;
+    background-color: #ed1c24;
+    font-style: normal;
+}

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | Devang</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="config.js"></script>
+</head>
+<body>
+
+<canvas id="bg-canvas"></canvas>
+
+<div class="nav-overlay" id="nav-overlay"></div>
+<button class="hamburger" id="hamburger" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+</button>
+
+<nav class="sidebar" id="sidebar">
+    <div class="logo">
+        <div class="logo-name">Devang</div>
+        <div class="logo-sub">Portfolio</div>
+        <div class="logo-line"></div>
+        <div class="social-icons">
+            <a href="https://www.linkedin.com/in/devang-kumar-78ab722b3/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://github.com/devang-kumar" target="_blank"><i class="fab fa-github"></i></a>
+        </div>
+    </div>
+    <ul class="nav-links">
+        <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+        <li><a href="about us .html"><i class="fas fa-user"></i> About</a></li>
+        <li><a href="skills.html"><i class="fas fa-layer-group"></i> Skills</a></li>
+        <li><a href="projects.html" class="active"><i class="fas fa-code"></i> Projects</a></li>
+        <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+    </ul>
+</nav>
+
+<main class="main-content">
+    <section class="projects-section">
+        <div class="projects-header">
+            <div>
+                <h2 class="section-title">My <span class="title-accent">Projects</span></h2>
+                <div class="title-line"></div>
+            </div>
+            <div class="github-badge">
+                <span class="dot"></span>
+                Live from GitHub API
+            </div>
+        </div>
+
+        <div id="projects-container" class="projects-grid">
+            <div class="loading-spinner">
+                <div class="spinner"></div>
+                <p>Fetching from GitHub...</p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<script>
+// Canvas background (shared)
+const canvas = document.getElementById('bg-canvas');
+const ctx = canvas.getContext('2d');
+let particles = [];
+function resize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+resize(); window.addEventListener('resize', resize);
+class Particle {
+    constructor() { this.reset(); }
+    reset() {
+        this.x = Math.random() * canvas.width; this.y = Math.random() * canvas.height;
+        this.size = Math.random() * 1.5 + 0.3; this.speedX = (Math.random() - 0.5) * 0.4;
+        this.speedY = (Math.random() - 0.5) * 0.4; this.opacity = Math.random() * 0.5 + 0.1;
+        this.color = Math.random() > 0.7 ? '#7c3aed' : '#00f5ff';
+    }
+    update() { this.x += this.speedX; this.y += this.speedY; if (this.x < 0 || this.x > canvas.width || this.y < 0 || this.y > canvas.height) this.reset(); }
+    draw() { ctx.save(); ctx.globalAlpha = this.opacity; ctx.fillStyle = this.color; ctx.shadowBlur = 6; ctx.shadowColor = this.color; ctx.beginPath(); ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2); ctx.fill(); ctx.restore(); }
+}
+for (let i = 0; i < 120; i++) particles.push(new Particle());
+function drawGrid() { ctx.strokeStyle = 'rgba(0,245,255,0.03)'; ctx.lineWidth = 1; const s = 60; for (let x = 0; x < canvas.width; x += s) { ctx.beginPath(); ctx.moveTo(x,0); ctx.lineTo(x,canvas.height); ctx.stroke(); } for (let y = 0; y < canvas.height; y += s) { ctx.beginPath(); ctx.moveTo(0,y); ctx.lineTo(canvas.width,y); ctx.stroke(); } }
+function animate() { ctx.clearRect(0,0,canvas.width,canvas.height); drawGrid(); particles.forEach(p => { p.update(); p.draw(); }); for (let i = 0; i < particles.length; i++) { for (let j = i+1; j < particles.length; j++) { const dx = particles[i].x-particles[j].x, dy = particles[i].y-particles[j].y, d = Math.sqrt(dx*dx+dy*dy); if (d < 100) { ctx.save(); ctx.globalAlpha = (1-d/100)*0.08; ctx.strokeStyle='#00f5ff'; ctx.lineWidth=0.5; ctx.beginPath(); ctx.moveTo(particles[i].x,particles[i].y); ctx.lineTo(particles[j].x,particles[j].y); ctx.stroke(); ctx.restore(); } } } requestAnimationFrame(animate); }
+animate();
+
+// Language color map
+const langColors = {
+    JavaScript: '#f7df1e', Python: '#3572A5', HTML: '#e34c26',
+    CSS: '#563d7c', TypeScript: '#2b7489', Java: '#b07219',
+    'C++': '#f34b7d', C: '#555555', Ruby: '#701516', Go: '#00ADD8'
+};
+
+const langIcons = {
+    JavaScript: 'fab fa-js', Python: 'fab fa-python', HTML: 'fab fa-html5',
+    CSS: 'fab fa-css3-alt', TypeScript: 'fab fa-js', Java: 'fab fa-java',
+    default: 'fas fa-code'
+};
+
+// Token loaded from config.js (keep config.js out of git)
+const GH_TOKEN = (typeof GH_CONFIG !== 'undefined') ? GH_CONFIG.token : '';
+
+// Cache helper — stores data in localStorage with a TTL (1 hour)
+function ghCache(key, data, ttlMs = 3600000) {
+    localStorage.setItem(key, JSON.stringify({ data, exp: Date.now() + ttlMs }));
+}
+function ghCacheGet(key) {
+    try {
+        const item = JSON.parse(localStorage.getItem(key));
+        if (item && Date.now() < item.exp) return item.data;
+    } catch(e) {}
+    return null;
+}
+
+async function ghFetch(url) {
+    const cached = ghCacheGet(url);
+    if (cached) return cached;
+    const headers = { 'Accept': 'application/vnd.github+json' };
+    if (GH_TOKEN) headers['Authorization'] = `Bearer ${GH_TOKEN}`;
+    const res = await fetch(url, { headers });
+    if (res.status === 403) throw new Error('rate_limit');
+    if (!res.ok) throw new Error('api_error');
+    const data = await res.json();
+    ghCache(url, data);
+    return data;
+}
+
+async function fetchProjects() {
+    const container = document.getElementById('projects-container');
+    const username = 'devang-kumar';
+
+    try {
+        const repos = await ghFetch(`https://api.github.com/users/${username}/repos?sort=updated&per_page=20`);
+        const projects = repos.filter(r => !r.fork && r.name !== username);
+
+        container.innerHTML = '';
+
+        if (!projects.length) {
+            container.innerHTML = '<p style="color:var(--muted);grid-column:1/-1">No public repositories found.</p>';
+            return;
+        }
+
+        // Fetch all language breakdowns in parallel (cached individually)
+        const langRequests = projects.map(repo => ghFetch(repo.languages_url).catch(() => ({})));
+        const allLangs = await Promise.all(langRequests);
+
+        projects.forEach((repo, i) => {
+            const card = document.createElement('div');
+            card.className = 'project-card';
+            card.style.animationDelay = `${i * 0.08}s`;
+
+            const primaryLang = repo.language || '';
+            const iconClass = langIcons[primaryLang] || langIcons.default;
+            const desc = repo.description || 'A GitHub repository by Devang Kumar.';
+
+            // Build language tags from the languages API (all detected languages)
+            const langs = Object.keys(allLangs[i]);
+            const langTagsHTML = langs.map(l => {
+                const color = langColors[l] || '#00f5ff';
+                return `<span class="project-tag" style="color:${color};border-color:${color}40;background:${color}12">
+                    <i class="fas fa-circle" style="font-size:6px;margin-right:4px"></i>${l}
+                </span>`;
+            }).join('');
+
+            card.innerHTML = `
+                <div class="project-card-header">
+                    <div class="project-icon"><i class="${iconClass}"></i></div>
+                    <div class="project-stars">
+                        <i class="fas fa-star"></i> ${repo.stargazers_count}
+                    </div>
+                </div>
+                <div class="project-title">${repo.name.replace(/-/g, ' ')}</div>
+                <div class="project-desc">${desc}</div>
+                <div class="project-tags">
+                    ${langTagsHTML || '<span class="project-tag">No languages detected</span>'}
+                </div>
+                <div class="project-links">
+                    <a href="${repo.html_url}" target="_blank" class="project-link">
+                        <i class="fab fa-github"></i> Source Code
+                    </a>
+                    ${repo.homepage ? `<a href="${repo.homepage}" target="_blank" class="project-link">
+                        <i class="fas fa-external-link-alt"></i> Live Demo
+                    </a>` : ''}
+                </div>
+            `;
+            container.appendChild(card);
+        });
+    } catch (err) {
+        const isRateLimit = err.message === 'rate_limit';
+        container.innerHTML = `
+            <div style="grid-column:1/-1;padding:30px;background:rgba(239,68,68,0.05);border:1px solid rgba(239,68,68,0.2);border-radius:12px">
+                <p style="color:#ef4444;margin-bottom:8px"><i class="fas fa-exclamation-triangle"></i> ${isRateLimit ? 'GitHub API rate limit reached (60 req/hr).' : 'Failed to load projects from GitHub.'}</p>
+                <p style="color:var(--muted);font-size:13px">${isRateLimit ? 'Cached data will be used automatically. Try again in an hour or add a GitHub token.' : 'Check your connection and try again.'}</p>
+            </div>`;
+    }
+}
+
+document.addEventListener('DOMContentLoaded', fetchProjects);
+</script>
+<script src="nav.js"></script>
+</body>
+</html>
